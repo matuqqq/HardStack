@@ -7,163 +7,154 @@
     <title>Hardware Duty</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="shortcut icon"
-        href="https://cdn.discordapp.com/attachments/853820431151661067/1188220927310315580/logo.png?ex=6599bbf9&is=658746f9&hm=27ca291eec0a59c151bba330aa4019235d214ba75348eb5279ea0ae0bfc26f9b&"
-        type="image/ico" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/service.css">
+    <link rel="stylesheet" href="./css/social.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/853820431151661067/1188220927310315580/logo.png?ex=6599bbf9&is=658746f9&hm=27ca291eec0a59c151bba330aa4019235d214ba75348eb5279ea0ae0bfc26f9b&" type="image/ico" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="nav" href="#main"><img class="navimg" src="https://cdn.discordapp.com/attachments/853820431151661067/1188220927310315580/logo.png" alt=""></a></nav><nav class="navbar navbar-expand-lg fixed-top">
-        <div id="nav" class="collapse navbar-collapse mr-3">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item mr-2">
-                    <a class="nav-link" href="#main">Inicio</a>
-                </li>
-                <li class="nav-item mr-2">
-                    <a class="nav-link" href="#services">Servicios</a>
-                </li>
-                <li class="nav-item mr-2">
-                    <a class="nav-link" href="#who">Nosotros</a>
-                </li>
-            </ul>
+    <nav class="navbar">
+        <div class="navup">
+            <a href="#main">
+            <img src="https://cdn.discordapp.com/attachments/853820431151661067/1188220927310315580/logo.png" alt=""
+                style="width: 10vh; height: 9vh; margin-top: 10px;">
+            </a>
+            <label class="menuButton" for="check">
+                <input type="checkbox" id="check" onclick="">
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bot"></span>
+            </label>
+        </div>
+        <div class="navdown">
+            <a class="button" data-text="Awesome" href="#main">
+                <span class="actual-text">&nbsp;Inicio&nbsp;</span>
+                <span aria-hidden="true" class="hover-text">&nbsp;Inicio&nbsp;</span>
+            </a>
+            <a class="button" data-text="Awesome" href="#services">
+                <span class="actual-text">&nbsp;Servicios&nbsp;</span>
+                <span aria-hidden="true" class="hover-text">&nbsp;Servicios&nbsp;</span>
+            </a>
+            <a class="button" data-text="Awesome" href="#nosotros">
+                <span class="actual-text">&nbsp;Nosotros&nbsp;</span>
+                <span aria-hidden="true" class="hover-text">&nbsp;Nosotros&nbsp;</span>
+            </a>
         </div>
     </nav>
 
-    <section class="s-one" id="main">
-        <main class="container-fluid d-flex flex-column vh-100 text-center MainContainer">
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
-                    <h1 data-value="Hardware Duty">Hardware Duty</h1>
+    <div class="esto">
+        <section class="s-one" id="main">
+            <main class="container-fluid d-flex flex-column vh-100 text-center MainContainer">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <!--<h1 data-value="Hardware Duty">Hardware Duty</h1>-->
+                    </div>
                 </div>
-            </div>
-            <div class="row pt-6 align-middle">
-                <div class="col-lg-6 text-center">
-                    <h3 class="sub-tittle">¿Quieres saltar al siguiente nivel?</h3>
-                    <p class="sub-tittle">
-                        Los mejores servicios técnicos en informática, a la distancia de un
-                        click.
-                    </p>
+                <div class="row pt-6 align-middle">
+                    <div class="col-lg-6 text-center">
+                        <h3 class="sub-tittle">¿Quieres saltar al siguiente nivel?</h3>
+                        <p class="sub-tittle">
+                            Los mejores servicios técnicos en informática, a la distancia de un
+                            click.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </main>
-    </section>
+            </main>
+        </section>
+        <img src="./images/forma.png" alt="" class="forma">
+    </div>
 
-    <section class="s-two">
-        <canvas id="canvas"></canvas>
-        <div id="services" class="container-fluid d-flex flex-column vh-100 text-center ServicesContainer">
-            <h3 class="text-center pt-5 pb-5 service-tittle">Servicios</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-3 ml-2 mr-2">
-                    <div class="card custom-card">
-                        <div class="circulo-icono">
-                            <box-icon name='desktop' color='#ffffff' size="lg"></box-icon>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Armado y reparacion de PC</h5>
-                            <p class="card-text text-center">Nos especializamos en Armado, Limpieza y reparacion de Computadoras, y utilizamos los mejores materiales del mercado, realizamos cambio de pasta termica, actualizacion de thermalpad´s en caso de ser necesario y hacemos una buena gestion para dejarlo lo mas estetico posible!</p>
-                        </div>
-                    </div>
+    <div class="s-two"  id="services"> 
+        <h2>Nuestros Servicios</h2>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <div class="circulo-icono">
+                    <box-icon name='desktop' color='#ffffff' size="lg"></box-icon>
                 </div>
-                <div class="col-md-6 col-lg-3 ml-2 mr-2 ">
-                    <div class="card custom-card">
-                        <div class="circulo-icono">
-                            <box-icon name='data' color='#ffffff' size="lg"></box-icon>
-                        </div>
-                        <div class="card-body ">
-                            <h5 class="card-title ">Desarrollo de Paginas web y Aplicaciones moviles</h5>
-                            <p class="card-text text-center">Desarrollamos paginas web de alta calidad, con diseños
-                                personalizados a pedido. Creamos los servidores necesarios, creamos y configuramos las
-                                bases de datos, y desarollamos microservicios de la mas alta calidad para que tu pagina
-                                sea lo mas rapida y proactiva que hay en el mercado. Hacemos landing pages,
-                                microservicios, paneles de administracion y gestion empresarial, tambien realizamos
-                                aplicaciones moviles multiplataforma a pedido.</p>
-                        </div>
-                    </div>
-                </div>
+                <h3>Armado y reparacion de PC</h3>
+                <p>Nos especializamos en Armado, Limpieza y reparacion de Computadoras, y utilizamos los mejores materiales del mercado, realizamos cambio de pasta termica, actualizacion de thermalpad´s en caso de ser necesario y hacemos una buena gestion para dejarlo lo mas estetico posible!</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-3 ml-2 mr-2">
-                    <div class="card custom-card">
-                        <div class="circulo-icono">
-                            <box-icon name='code-block' color='#ffffff' size="lg"></box-icon>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Hackeo de consolas</h5>
-                            <p class="card-text">Hackeamos/Chipeamos la mayoria de las consolas del mercado, con los
-                                ultimos metodos mas famosos, instalamos los juegos que pidas, diferentes emuladores y
-                                homebrews, todo esto de la manera mas segura y rapida posible para que vos puedas
-                                velozmente jugar todos los juegos que quieras de forma totalmente liberada.</p>
-                        </div>
-                    </div>
+    
+            <div class="tarjeta">
+                <div class="circulo-icono">
+                    <box-icon name='data' color='#ffffff' size="lg"></box-icon>
                 </div>
-                <div class="col-md-6 col-lg-3 ml-2 mr-2">
-                    <div class="card custom-card">
-                        <div class="circulo-icono">
-                            <box-icon type='solid' name='component' color='#ffffff' size="lg"></box-icon>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Soporte E instalacion de Programas</h5>
-                            <p class="card-text">Hacemos soporte de la mayoria de programas como photoshop, suit de
-                                adobe y suit de microsoft, ademas de instalar todos los programas necesarios que pidas,
-                                tanto de productividad como videojuegos.</p>
-                        </div>
-                    </div>
+                <h3>Desarrollo de Paginas web</h3>
+                <p>Desarrollamos paginas web de alta calidad, con diseños personalizados a pedido. nos especializamosen servidores y bases de datos, y, por ultimo, nos encargamos que tu pagina rapida y proactiva. Hacemos landing pages, microservicios, paneles de administración, gestion empresarial, etc.</p>
+            </div>
+    
+            <div class="tarjeta">
+                <div class="circulo-icono">
+                    <box-icon name='code-block' color='#ffffff' size="lg" ></box-icon>
                 </div>
+                <h3>Hackeo de consolas</h3>
+                <p>Hackeamos/Chipeamos las consolas con los metodos mas famosos, instalamos los juegos que pidas, diferentes emuladores y homebrews, todo esto de la manera mas segura y rapida posible para que vos puedas jugar todos los juegos que quieras de forma totalmente liberada.</p>
+            </div>
+    
+            <div class="tarjeta">
+                <div class="circulo-icono">
+                    <box-icon type='solid' name='component' color='#ffffff' size="lg"></box-icon>
+                </div>
+                <h3>Soporte E instalacion de Programas</h3>
+                <p>Hacemos soporte de la mayoria de programas como photoshop, suit de adobe y suit de microsoft. instalamos todos los programas que pidas, tanto de productividad como videojuegos.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="s-three background-who">
-        <div id="who" class="container-fluid d-flex flex-column vh-100 text-center">
-            <h3 class="who-title">Quienes somos?</h3>
-            <div class="row pt-6 align-middle">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body card-who">
-                            <div class="card-text">
+    <section class="s-three background-who" id="nosotros">
+        <div class="card">
+            <h3 class="who-title">¿Quienes somos?</h3>
+                            <p>
                                 El equipo de Hardware Duty se compone de los mejores estudiantes de informática y
                                 ciencias de la computacion, contando con altos conocimientos en hardware y software,
                                 armados de pc y desarrollo.
                                 Estos apasionados jóvenes forman un grupo cohesionado que comparte el objetivo de poder
                                 servir a la gente con sus conocimientos en el area de la informatica.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                            </p>
             </div>
-            <footer>
-                <div class="container">
-                    <div class="card">
-                        <div class="card-contact">
-                            <h4 class="contact-title">Contacto</h4>
-                            <!--          <a href="mailto:hardwareduty@gmail.com=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!"><img class="mail-anchor" src="https://cdn.discordapp.com/attachments/853820431151661067/1204260880615874580/58485698e0bb315b0f7675a8.png?ex=65d41658&is=65c1a158&hm=c3e8be7dfc2d679e9820353773e0b27f80429a83d8ac06fb1ff77f86baec1576&" alt=""></a>
-                                    <a href="https://wa.me/541123741777?text=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!"><img class="wpp-anchor" src="https://cdn.discordapp.com/attachments/853820431151661067/1204259149173624862/16458f68df85cc50002e5a97df0113ad.png?ex=65d414bb&is=65c19fbb&hm=86722ddf4895ae9b61936bca8642b1015b4f6e15d1212ebb07b4eb1c73c74e65&" alt="Whattsapp button"alt=""></a> 
-                                    <a href="https://www.instagram.com/hardwareduty?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA=="><img class="ig-anchor" src="https://media.discordapp.net/attachments/853820431151661067/1204258735514456064/logotipo-redes-sociales-cuadrado-negro_197792-3367.avif2.png?ex=65d41458&is=65c19f58&hm=30460c0abfbfd44f204c08e757e6fab81a21f85107f41a12bd6e9c143335bc89&=&format=webp&quality=lossless&width=188&height=188" alt="Instagram button"></a></p>
-                                -->
-                            <div class="contactos">
-                                <ul>
-                                    <a href="https://www.instagram.com/hardwareduty?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA=="><li class="instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></li></a>
-                                    <a href="mailto:hardwareduty@gmail.com=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!"><li class="envelope"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></li></a>
-                                    <a href="https://wa.me/541123741777?text=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!"><li class="whatsapp"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></li></a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </section>
+
+    <div class="tooltip-container">
+        <span class="text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" class="bi bi-send-fill" viewBox="0 0 16 16">
+                <path
+                    d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z">
+                </path>
+            </svg>
+        </span>
+
+
+
+        <span class="tooltip4">
+            <a href="https://wa.me/541123741777?text=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!" style="display: contents;">
+            <box-icon name='whatsapp' type='logo'  color='#0ead38'></box-icon>
+            </a>
+        </span>
+
+        <span class="tooltip5">
+            <a href="https://www.instagram.com/hardwareduty?utm_source=ig_web_button_share_sheet&igsh=OGQ5ZDc2ODk2ZA==" style="display: contents;">
+            <box-icon name='instagram' type='logo' color='#ad0e57' ></box-icon>
+            </a>
+        </span>
+
+        <span class="tooltip8">
+            <a href="mailto:hardwareduty@gmail.com" style="display: contents;">
+            <box-icon name='gmail' type='logo' color='#ff3600' ></box-icon>
+            </a>
+        </span>
+        <span class="tooltip9"> </span>
+    </div>
+
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./scripts/scroll.js"></script>
     <script src="./scripts/background services.js"></script>
     <script src="./scripts/h1.js"></script>
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/cards.js"></script>
 </body>
 
 </html>
