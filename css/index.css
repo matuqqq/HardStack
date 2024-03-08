@@ -82,6 +82,10 @@ a:hover {
 
 @media screen and (max-width: 1100px) {
 
+    .forma{
+    visiblility: hidden;
+    }
+    
     .navchecked {
         height: 20%;
         align-items: baseline;
