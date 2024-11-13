@@ -54,7 +54,7 @@ const closeMenu = () => {
 }
 
 .logo img {
-  height: 5rem;
+  height: 4rem;
 }
 
 .nav-links {

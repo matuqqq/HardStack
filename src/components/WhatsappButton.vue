@@ -1,6 +1,6 @@
 <template>
   <a href="https://wa.me/541123741777?text=Hola%20estoy%20interesado%20en%20uno%20de%20sus%20servicios!" class="whatsapp-button" target="_blank">
-    <box-icon type='logo' name='whatsapp' color='#ffffff' size="lg"></box-icon>
+    <box-icon type='logo' name='whatsapp' color='#ffffff' size="md"></box-icon>
   </a>
 </template>
 
@@ -14,8 +14,8 @@ import 'boxicons'
   bottom: 40px;
   right: 40px;
   background: #25D366;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
