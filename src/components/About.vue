@@ -2,7 +2,7 @@
   <section class="about" id="nosotros">
     <div class="about-card">
       <h2>¿Quienes somos?</h2>
-      <p>El equipo de Hard Stack se compone de los mejores estudiantes de informática y ciencias de la computacion, contando con altos conocimientos en hardware y software, armados de pc y desarrollo. Estos apasionados jóvenes forman un grupo cohesionado que comparte el objetivo de poder servir a la gente con sus conocimientos en el area de la informatica.</p>
+      <p>El equipo de Hard Stack se compone de los mejores estudiantes de informática y ciencias de la computacion, contando con altos conocimientos en hardware y software. Estos apasionados jóvenes forman un grupo cohesionado que comparte el objetivo de poder servir a la gente con sus conocimientos en el area de la informatica.</p>
     </div>
   </section>
 </template>
