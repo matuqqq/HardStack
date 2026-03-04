@@ -32,7 +32,7 @@ const projects = [
     title: 'Security Focus',
     category: 'Sistema Integral',
     description: 'Proyecto destinado a optimizar la seguridad y administración de barrios privados. Este sistema integral combina diversas tecnologías avanzadas para asegurar un control de acceso y seguridad eficaz.',
-    image: getImageUrl('../assets/proyectos/security(2).png'),
+    image: getImageUrl('/proyectos/security(2).png'),
     link: 'https://security-focus.netlify.app/',
     target: '_blank'
   },
@@ -40,7 +40,7 @@ const projects = [
     title: 'HardShop',
     category: 'Software para Tiendas de Ropa',
     description: 'Software de gestión para tiendas de ropa, diseñado para optimizar el inventario, ventas y atención al cliente. Con una interfaz intuitiva y funcionalidades avanzadas, HardShop es la solución ideal para modernizar tu negocio.',
-    image: getImageUrl('../assets/proyectos/hardshop.png'),
+    image: getImageUrl('/proyectos/hardshop.png'),
     link: 'https://hardshop.netlify.app/',
     target: '_blank'
   },
@@ -48,7 +48,7 @@ const projects = [
     title: 'Página para FGTools',
     category: 'Página Web',
     description: 'Página web Para FGtools, la cual consiste en un catálogo de sus productos, con información detallada y contacto para clientes potenciales. Esta página web está diseñada para mejorar la presencia en línea de FGtools y facilitar la conexión con su audiencia.',
-    image: getImageUrl('../assets/proyectos/fgtools.ico'),
+    image: getImageUrl('/proyectos/Fgtools.ico'),
     link: 'https://fgtools.com.ar/',
     target: '_blank'
   },
@@ -56,7 +56,7 @@ const projects = [
     title: 'Página para Oli',
     category: 'Página Web',
     description: 'Página web Para Premoldeados Oli. La misma contiene información sobre la empresa y sus servicios y a su vez un catálogo de sus productos. se diseñó para mejorar la presencia en línea de Premoldeados Oli y facilitar la conexión con su audiencia.',
-    image: getImageUrl('../assets/proyectos/Oli.png'),
+    image: getImageUrl('/proyectos/Oli.png'),
     link: 'https://premoldeadosoli.com.ar/',
     target: '_blank'
   }

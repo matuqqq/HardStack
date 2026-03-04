@@ -22,7 +22,7 @@ import WhatsappButton from './components/WhatsappButton.vue'
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="./assets/HardStack.png" alt="HardStack Logo" class="footer-logo">
+            <img src="/HardStack.png" alt="HardStack Logo" class="footer-logo">
             <p>Transformando el futuro tecnológico, un proyecto a la vez.</p>
           </div>
           <div class="footer-links">

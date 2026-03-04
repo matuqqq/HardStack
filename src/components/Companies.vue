@@ -1,227 +1,113 @@
 <template>
-  <nav class="navbar" :class="{ 'scrolled': isScrolled }">
-    <div class="nav-container">
-      <div class="logo-container">
-        <img src="../assets/HardStack.png" alt="Hardstack Logo" class="logo-img" />
-        <span class="logo-text">Hard <span class="stack">Stack</span></span>
-      </div>
-      
-      <div class="hamburger" @click="toggleMenu" :class="{ active: isMenuOpen }">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="nav-links" :class="{ active: isMenuOpen }">
-        <a href="#inicio" @click="closeMenu">Inicio</a>
-        <a href="#servicios" @click="closeMenu">Servicios</a>
-        <a href="#proyectos" @click="closeMenu">Proyectos</a>
-        <a href="#empresas" @click="closeMenu">Empresas</a>
-        <a href="#nosotros" @click="closeMenu">Nosotros</a>
-        <div class="social-links">
-          <a href="https://www.instagram.com/hardstack.arg" target="_blank" class="social-icon">
-            <box-icon type='logo' name='instagram' color='var(--blanco-puro)'></box-icon>
-          </a>
-          <a 
-            :href="mailLink" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="social-icon"
-          >
-            <box-icon name='envelope' color='var(--blanco-puro)'></box-icon>
-          </a>
+  <section class="companies" id="empresas">
+    <div class="container">
+      <h2 class="section-title">Confían en <span class="highlight">Nosotros</span></h2>
+      <div class="companies-wrapper">
+        <div class="companies-track">
+          <div v-for="(company, index) in companies" :key="index" class="company-card">
+            <img :src="company.img" :alt="company.name" class="company-img" />
+            <span>{{ company.name }}</span>
+          </div>
+          <div v-for="(company, index) in companies" :key="'dup-'+index" class="company-card">
+            <img :src="company.img" :alt="company.name" class="company-img" />
+            <span>{{ company.name }}</span>
+          </div>
         </div>
       </div>
     </div>
-  </nav>
+  </section>
 </template>
 
 <script setup>
-import 'boxicons'
-import { ref, onMounted, onUnmounted } from 'vue'
+// Función para obtener la URL de la imagen de forma dinámica con Vite
+const getImageUrl = (path) => {
+  return new URL(path, import.meta.url).href;
+};
 
-const isMenuOpen = ref(false)
-const isScrolled = ref(false)
-const mailLink = ref("mailto:hardstack.arg@gmail.com") // Default móvil
+const companies = [
+  { name: 'FgTools', img: getImageUrl('/logos/Fgtools.ico') },
+  { name: 'OLI', img: getImageUrl('/logos/Oli.png') },
+  { name: 'Insomnes', img: getImageUrl('/logos/insomnes.png') },
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-  document.body.style.overflow = isMenuOpen.value ? 'hidden' : ''
-}
-
-const closeMenu = () => {
-  isMenuOpen.value = false
-  document.body.style.overflow = ''
-}
-
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  
-  // Lógica de detección de dispositivo
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-  if (!isMobile) {
-    // Si es PC → Redirigir a Gmail Web (Compose)
-    mailLink.value = "https://mail.google.com/mail/?view=cm&fs=1&to=hardstack.arg@gmail.com"
-  }
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+  //Borrar luego
+    { name: 'FgTools', img: getImageUrl('/logos/Fgtools.ico') },
+  { name: 'OLI', img: getImageUrl('/logos/Oli.png') },
+  { name: 'Insomnes', img: getImageUrl('/logos/insomnes.png') },
+]
 </script>
 
 <style scoped>
-/* Tu CSS se mantiene exactamente igual */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 0;
-  background: transparent;
-  transition: all 0.4s ease;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+.companies {
+  background-color: var(--gris-lavanda);
+  padding: 4rem 0;
+  overflow: hidden;
 }
 
-.navbar.scrolled {
-  padding: 0.8rem 0;
-  background: rgba(25, 25, 112, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--azul-profundo);
+  margin-bottom: 3rem;
 }
 
-.nav-container {
-  width: 85%;
-  max-width: 1400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  position: relative;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  z-index: 1100;
-}
-
-.logo-img {
-  height: 3rem;
-  width: auto;
-}
-
-.logo-text {
-  color: var(--blanco-puro);
-  font-size: 1.4rem;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.logo-text .stack {
+.highlight {
   color: var(--violeta-marca);
 }
 
-.nav-links {
+.companies-wrapper {
   display: flex;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0; 
+  margin-top: -20px;
+}
+
+.companies-track {
+  display: flex;
+  gap: 6rem;
+  animation: scroll 20s linear infinite;
+  width: max-content;
   align-items: center;
-  gap: 2rem;
 }
 
-.nav-links a {
-  color: var(--blanco-puro);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--cian-electrico);
-}
-
-.social-links {
+.company-card {
   display: flex;
-  gap: 1rem;
-}
-
-.social-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  transition: 0.3s;
-}
-
-.social-icon:hover {
-  background: var(--violeta-marca);
-}
-
-.hamburger {
-  display: none;
   flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 1100;
+  align-items: center;
+  gap: 1rem;
+  min-width: 120px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+  will-change: transform; 
 }
 
-.hamburger span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background-color: var(--blanco-puro);
-  border-radius: 3px;
-  transition: 0.3s;
+.company-card:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-10px); 
 }
 
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-  .hamburger.active span:nth-child(2) { opacity: 0; }
-  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
-
-  .nav-links {
-    position: fixed;
-    top: -110vh;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--azul-profundo);
-    flex-direction: column;
-    justify-content: center;
-    gap: 2.5rem;
-    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    z-index: 1050;
-  }
-
-  .nav-links.active {
-    top: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.8rem;
-  }
-
-  .social-links {
-    margin-top: 2rem;
-  }
+.company-img {
+  height: 60px; /* Ajusta según el tamaño de tus logos */
+  width: auto;
+  object-fit: contain;
 }
 
-@media (max-width: 480px) {
-  .logo-text { display: none; }
-  .nav-container { width: 90%; }
+.company-card span {
+  font-weight: 600;
+  color: var(--azul-profundo);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Ajuste automático para loop infinito */
+}
+
+/* Pausa la animación al pasar el mouse para que puedan ver bien el logo */
+.companies-wrapper:hover .companies-track {
+  animation-play-state: paused;
 }
 </style>

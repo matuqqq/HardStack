@@ -4,7 +4,7 @@
       <div class="about-grid">
         <div class="about-image">
           <div class="image-wrapper">
-            <img src="../assets/about.avif" alt="HardStack Team" />
+            <img src="/about.avif" alt="HardStack Team" />
           </div>
         </div>
         

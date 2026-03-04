@@ -2,7 +2,7 @@
   <nav class="navbar" :class="{ 'scrolled': isScrolled }">
     <div class="nav-container">
       <div class="logo-container">
-        <img src="../assets/HardStack.png" alt="Hardstack Logo" class="logo-img" />
+        <img src="/HardStack.png" alt="Hardstack Logo" class="logo-img" />
         <span class="logo-text">Hard <span class="stack">Stack</span></span>
       </div>
       
