@@ -22,7 +22,12 @@
           <a href="https://www.instagram.com/hardstack.arg" target="_blank" class="social-icon">
             <box-icon type='logo' name='instagram' color='var(--blanco-puro)'></box-icon>
           </a>
-          <a href="mailto:hardstack.arg@gmail.com" class="social-icon">
+          <a 
+            :href="mailLink" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="social-icon"
+          >
             <box-icon name='envelope' color='var(--blanco-puro)'></box-icon>
           </a>
         </div>
@@ -37,10 +42,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
+const mailLink = ref("mailto:hardstack.arg@gmail.com") // Default móvil
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
-  // Bloquea el scroll del body cuando el menú está abierto
   document.body.style.overflow = isMenuOpen.value ? 'hidden' : ''
 }
 
@@ -55,6 +60,13 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  
+  // Lógica de detección de dispositivo
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  if (!isMobile) {
+    // Si es PC → Redirigir a Gmail Web (Compose)
+    mailLink.value = "https://mail.google.com/mail/?view=cm&fs=1&to=hardstack.arg@gmail.com"
+  }
 })
 
 onUnmounted(() => {
@@ -63,7 +75,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* --- NAVBAR BASE --- */
+/* Tu CSS se mantiene exactamente igual */
 .navbar {
   position: fixed;
   top: 0;
@@ -79,7 +91,7 @@ onUnmounted(() => {
 
 .navbar.scrolled {
   padding: 0.8rem 0;
-  background: rgba(25, 25, 112, 0.98); /* Azul profundo sólido para lectura */
+  background: rgba(25, 25, 112, 0.98);
   backdrop-filter: blur(10px);
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
@@ -94,12 +106,11 @@ onUnmounted(() => {
   position: relative;
 }
 
-/* --- LOGO --- */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  z-index: 1100; /* Asegura que el logo esté por encima del menú móvil */
+  z-index: 1100;
 }
 
 .logo-img {
@@ -118,7 +129,6 @@ onUnmounted(() => {
   color: var(--violeta-marca);
 }
 
-/* --- LINKS (ESCRITORIO) --- */
 .nav-links {
   display: flex;
   align-items: center;
@@ -157,13 +167,12 @@ onUnmounted(() => {
   background: var(--violeta-marca);
 }
 
-/* --- HAMBURGER --- */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 1100; /* Siempre por encima */
+  z-index: 1100;
 }
 
 .hamburger span {
@@ -175,20 +184,18 @@ onUnmounted(() => {
   transition: 0.3s;
 }
 
-/* --- MOBILE (MAX 768PX) --- */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
-  /* Animación X */
   .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
   .hamburger.active span:nth-child(2) { opacity: 0; }
   .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -7px); }
 
   .nav-links {
     position: fixed;
-    top: -110vh; /* Escondido arriba del todo */
+    top: -110vh;
     left: 0;
     width: 100%;
     height: 100vh;
@@ -197,11 +204,11 @@ onUnmounted(() => {
     justify-content: center;
     gap: 2.5rem;
     transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    z-index: 1050; /* Por debajo del hamburger pero encima de la web */
+    z-index: 1050;
   }
 
   .nav-links.active {
-    top: 0; /* Baja a cubrir la pantalla */
+    top: 0;
   }
 
   .nav-links a {
@@ -213,9 +220,8 @@ onUnmounted(() => {
   }
 }
 
-/* Ajustes pantallas pequeñas */
 @media (max-width: 480px) {
-  .logo-text { display: none; } /* Oculta texto para no apretar el header */
+  .logo-text { display: none; }
   .nav-container { width: 90%; }
 }
 </style>

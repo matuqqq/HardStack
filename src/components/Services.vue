@@ -1,13 +1,25 @@
 <template>
   <section class="services" id="servicios">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards-container">
-      <div class="tarjeta" v-for="(service, index) in services" :key="index">
-        <div class="circulo-icono">
-          <box-icon :name="service.icon" color='#ffffff' size="lg"></box-icon>
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servicios <span class="highlight">Especializados</span></h2>
+        <p class="section-subtitle">Soluciones integrales para transformar tu presencia digital y física.</p>
+      </div>
+
+      <div class="services-grid">
+        <div v-for="(service, index) in services" :key="index" class="service-card">
+          <div class="icon-wrapper">
+            <box-icon :name="service.icon" size="lg" :color="service.color"></box-icon>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul class="service-features">
+            <li v-for="feature in service.features" :key="feature">
+              <box-icon name='check' size='xs' color='var(--cian-electrico)'></box-icon>
+              {{ feature }}
+            </li>
+          </ul>
         </div>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
       </div>
     </div>
   </section>
@@ -18,79 +30,128 @@ import 'boxicons'
 
 const services = [
   {
-    icon: 'building',
+    icon: 'buildings',
     title: 'Sistemas para Negocios',
-    description: 'Ofrecemos soluciones completas en sistemas para tu negocio/rubro. Desde la implementación de sistemas de seguridad, gestión de acceso, hasta la integración de soluciones automatizadas para mejorar la eficiencia y seguridad. Adaptamos nuestras soluciones a tus necesidades específicas.'
+    color: 'var(--violeta-marca)',
+    description: 'Implementación de infraestructuras tecnológicas robustas y seguras.',
+    features: ['Sistemas de Seguridad', 'Gestión de Accesos', 'Automatización']
   },
   {
-    icon: 'desktop',
-    title: 'Desarrollo de Paginas web',
-    description: 'Desarrollamos paginas web de alta calidad, con diseños personalizados a pedido. nos especializamosen servidores y bases de datos, y, por ultimo, nos encargamos que tu pagina rapida y proactiva. Hacemos landing pages, microservicios, paneles de administración, gestion empresarial, etc.'
+    icon: 'code-block',
+    title: 'Desarrollo Web',
+    color: 'var(--cian-electrico)',
+    description: 'Sitios web modernos, rápidos y optimizados para cualquier dispositivo.',
+    features: ['Landing Pages', 'E-commerce', 'Paneles de Gestión']
   },
   {
     icon: 'data',
-    title: 'Administración de Bases de Datos',
-    description: 'Brindamos servicios especializados en administración de bases de datos. Nos encargamos de la instalación, configuración, optimización y mantenimiento de tus bases de datos para asegurar su rendimiento y disponibilidad. Trabajamos con diversas plataformas y tecnologías para adaptarnos a tus requerimientos específicos.'
+    title: 'Bases de Datos',
+    color: 'var(--rosa-acento)',
+    description: 'Optimización y mantenimiento de datos para un rendimiento máximo.',
+    features: ['Optimización SQL', 'Mantenimiento', 'Migraciones']
   }
 ]
 </script>
 
 <style scoped>
 .services {
-  padding: 5rem 2rem;
-  background: #000000;
-  color: white;
+  background-color: var(--gris-lavanda);
 }
 
-h2 {
+.section-header {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: white;
+  margin-bottom: 4rem;
 }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+.section-title {
+  font-size: 3rem;
+  color: var(--azul-profundo);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--violeta-marca);
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.tarjeta {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transition: transform 0.3s;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
-.tarjeta:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary-color);
-}
-
-.circulo-icono {
-  width: 80px;
-  height: 80px;
-  background: var(--primary-color);
-  border-radius: 50%;
+.service-card {
+  background: var(--blanco-puro);
+  padding: 3rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(25, 25, 112, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(138, 43, 226, 0.1);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(138, 43, 226, 0.1);
+  border-color: var(--violeta-marca);
+}
+
+.icon-wrapper {
+  width: 90px;
+  height: 90px;
+  background: var(--gris-lavanda);
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 2rem;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .icon-wrapper {
+  transform: rotate(10deg);
+  background: var(--azul-profundo);
+}
+
+.service-card:hover .icon-wrapper box-icon {
+  fill: var(--blanco-puro) !important;
 }
 
 h3 {
+  color: var(--azul-profundo);
+  font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: white;
 }
 
 p {
-  color: #cccccc;
+  color: #666;
+  margin-bottom: 2rem;
   line-height: 1.6;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.service-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--azul-profundo);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 </style>

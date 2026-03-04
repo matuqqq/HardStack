@@ -1,13 +1,24 @@
 :root {
-  --primary-color: #7808d0;
-  --primary-hover: #6006a8;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  --violeta-marca: #8A2BE2;
+  --azul-profundo: #3b076c;
+  --cian-electrico: #7e3bf1;
+  --gris-lavanda: #E6E6FA;
+  --rosa-acento: #FF69B4;
+  --blanco-puro: #FFFFFF;
+  
+  --primary-color: var(--violeta-marca);
+  --bg-dark: var(--azul-profundo);
+  --bg-light: var(--gris-lavanda);
+  --accent: var(--cian-electrico);
+  --secondary-accent: var(--rosa-acento);
+
+  font-family: 'Poppins', Inter, system-ui, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
   
   color-scheme: light dark;
-  background-color: #ffffff;
-  color: #213547;
+  background-color: var(--blanco-puro);
+  color: var(--azul-profundo);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,4 +40,21 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--blanco-puro);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+section {
+  padding: 5rem 10%;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 5%;
+  }
 }
