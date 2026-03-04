@@ -146,15 +146,40 @@ import 'boxicons'
 @media (max-width: 992px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 3rem;
+    text-align: center;
   }
   .about-content {
     order: 1;
   }
   .about-image {
     order: 2;
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .stat-item {
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .image-wrapper {
+    padding: 1rem;
+    border-radius: 25px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .description {
+    font-size: 1rem;
   }
 }
 </style>
